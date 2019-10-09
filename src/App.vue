@@ -6,7 +6,9 @@
     </div>
     <router-view/>
     <div class="fixed-footer">
-      <div class="opacity-20">&copy; Gregory Jacobs, {{ new Date().getFullYear() }}</div>
+      <div class="opacity-20">
+        &copy; {{ new Date().getFullYear() }} Gregory Jacobs - <a href="https://github.com/GregJacobs82/Filter-Map-Reduce" target="_blank" title="See the Github Repository">Github Repo</a>
+      </div>
     </div>
   </div>
 </template>
