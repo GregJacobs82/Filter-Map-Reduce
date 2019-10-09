@@ -7,7 +7,11 @@
     <div class="small-container">
       <h1>Employees</h1>
       <EmployeeForm @add:employee="addEmployee" />
-      <EmployeeTable :employees="employees" @delete:employee="deleteEmployee"/>
+      <EmployeeTable
+          :employees="employees"
+          @edit:employee="editEmployee"
+          @delete:employee="deleteEmployee"
+      />
     </div>
   </div>
 </template>
@@ -66,6 +70,18 @@ export default {
       const newEmployee = { ...employee, id };
       this.employees = [...this.employees, newEmployee];
     },
+
+    /**
+     * EDIT EMPLOYEE
+     * Take id and updatedEmployee parameters, map through the employees array, and update the correct employee.
+     * @param id, updatedEmployee
+     */
+    editEmployee(id, updatedEmployee) {
+      this.employees = this.employees.map(employee =>
+          employee.id === id ? updatedEmployee : employee
+      )
+    },
+
     /**
      * DELETE AN EXISTING EMPLOYEE
      * @param id
