@@ -6,6 +6,7 @@
     -->
     <div class="small-container">
       <h1>Employees</h1>
+      <EmployeeForm @add:employee="addEmployee" />
       <EmployeeTable :employees="employees"/>
     </div>
   </div>
@@ -15,11 +16,13 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import EmployeeTable from '@/components/EmployeeTable.vue'
+import EmployeeForm from "../components/EmployeeForm";
 
 
 export default {
   name: 'home',
   components: {
+    EmployeeForm,
     HelloWorld,
     EmployeeTable
   },
@@ -27,26 +30,31 @@ export default {
     return {
       employees: [
         {
-          id: 1,
           name: 'Richard Hendricks',
           email: 'richard@piedpiper.com',
         },
         {
-          id: 2,
           name: 'Bertram Gilfoyle',
           email: 'gilfoyle@piedpiper.com',
         },
         {
-          id: 3,
           name: 'Dinesh Chugtai',
           email: 'dinesh@piedpiper.com',
         },
         {
-          id: 4,
           name: 'Josh Miller',
           email: 'joshmiller@gmail.com',
         },
       ],
+    }
+  },
+  methods: {
+    addEmployee (employee) {
+      alert('Employee Added');
+
+      const newEmployee = { ...employee};
+
+      this.employees = [...this.employees, newEmployee];
     }
   }
 }
