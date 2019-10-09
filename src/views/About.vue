@@ -1,5 +1,7 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="about small-container">
+    <h1>About</h1>
+    <p>A simple vue CRUD app exploring JS: Filter, Map, Reduce</p>
+    <p>by Gregory Jacobs, {{ new Date().getFullYear() }}</p>
   </div>
 </template>

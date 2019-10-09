@@ -16,7 +16,7 @@
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  padding: 30px 1rem;
   a {
     font-weight: bold;
     color: #2c3e50;

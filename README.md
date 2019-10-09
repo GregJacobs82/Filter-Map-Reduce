@@ -1,5 +1,7 @@
 # filter-map-reduce
-https://www.taniarascia.com/getting-started-with-vue/
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06fbc056-8857-4d32-b719-ad46ac0930a4/deploy-status)](https://app.netlify.com/sites/gregs-employees/deploys)
+
+http://gregs-employees.netlify.com
 
 ## Project setup
 ```

@@ -35,23 +35,23 @@ export default {
       employees: [
         {
           id: 1,
-          name: 'Richard Hendricks',
-          email: 'richard@piedpiper.com',
+          name: 'Jimi Hendrix',
+          email: 'jimihendrix@example.com',
         },
         {
           id: 2,
-          name: 'Bertram Gilfoyle',
-          email: 'gilfoyle@piedpiper.com',
+          name: 'Oscar Wilde',
+          email: 'oscar@example.com',
         },
         {
           id: 3,
-          name: 'Dinesh Chugtai',
-          email: 'dinesh@piedpiper.com',
+          name: 'Bill Murray',
+          email: 'billmurray@example.com',
         },
         {
           id: 4,
           name: 'Josh Miller',
-          email: 'joshmiller@gmail.com',
+          email: 'joshmiller@example.com',
         },
       ],
     }
