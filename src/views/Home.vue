@@ -7,7 +7,7 @@
     <div class="small-container">
       <h1>Employees</h1>
       <EmployeeForm @add:employee="addEmployee" />
-      <EmployeeTable :employees="employees"/>
+      <EmployeeTable :employees="employees" @delete:employee="deleteEmployee"/>
     </div>
   </div>
 </template>
@@ -30,18 +30,22 @@ export default {
     return {
       employees: [
         {
+          id: 1,
           name: 'Richard Hendricks',
           email: 'richard@piedpiper.com',
         },
         {
+          id: 2,
           name: 'Bertram Gilfoyle',
           email: 'gilfoyle@piedpiper.com',
         },
         {
+          id: 3,
           name: 'Dinesh Chugtai',
           email: 'dinesh@piedpiper.com',
         },
         {
+          id: 4,
           name: 'Josh Miller',
           email: 'joshmiller@gmail.com',
         },
@@ -49,12 +53,27 @@ export default {
     }
   },
   methods: {
+    /**
+     * CREATE A NEW EMPLOYEE
+     * @param employee
+     */
     addEmployee (employee) {
-      alert('Employee Added');
-
-      const newEmployee = { ...employee};
-
+      const lastId =
+          this.employees.length > 0
+              ? this.employees[this.employees.length - 1].id
+              : 0;
+      const id = lastId + 1;
+      const newEmployee = { ...employee, id };
       this.employees = [...this.employees, newEmployee];
+    },
+    /**
+     * DELETE AN EXISTING EMPLOYEE
+     * @param id
+     */
+    deleteEmployee(id) {
+      this.employees = this.employees.filter(
+          employee => employee.id !== id
+      )
     }
   }
 }
