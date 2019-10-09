@@ -5,6 +5,9 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view/>
+    <div class="fixed-footer">
+      <div class="opacity-20">&copy; Gregory Jacobs, {{ new Date().getFullYear() }}</div>
+    </div>
   </div>
 </template>
 
@@ -25,4 +28,16 @@
     }
   }
 }
+  .fixed-footer {
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+    font-size: .85rem;
+    background: rgba(250,250,250,1);
+    padding: 1rem;
+    .opacity-20 {
+      opacity: .2;
+    }
+  }
 </style>
