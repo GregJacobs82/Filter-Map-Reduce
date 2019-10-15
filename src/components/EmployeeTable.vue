@@ -89,6 +89,13 @@
 </script>
 
 <style lang="scss" scoped>
+
+    //*** PAGE ***/
+    #employee-table {
+        margin-bottom: 180px;
+    }
+
+    //*** BUTTONS ***/
     $color-default: rgba(0,0,0,.5);
     $color-success: rgba(15,175,15,1);
     $color-danger: rgba(175,5,5,1);
