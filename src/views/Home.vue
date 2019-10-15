@@ -5,7 +5,7 @@
         <HelloWorld msg="Welcome to Your Vue.js App"/>
         -->
         <div class="small-container">
-            <h1>Employees</h1>
+            <h1>Employees <span class="badge">{{ employees.length }}</span></h1>
             <EmployeeForm @add:employee="addEmployee"/>
             <EmployeeTable
                 :employees="employees"
@@ -95,6 +95,15 @@
                         body: JSON.stringify(employee),
                         headers: { "Content-type": "application/json; charset=UTF-8" }
                     });
+
+                    /* NEED TO ADD THE ID
+                    const lastId =
+                        this.employees.length > 0
+                            ? this.employees[this.employees.length - 1].id
+                            : 0;
+                    const id = lastId + 1;
+                    */
+
                     const data = await response.json();
                     this.employees = [...this.employees, data];
                 } catch (error) {
@@ -140,3 +149,15 @@
                     }
     }
 </script>
+
+<style lang="scss" scoped>
+    .badge {
+        background: lightblue;
+        color: white;
+        font-size: .5em;
+        padding: .5em;
+        position: relative;
+        top: -.5em;
+        border-radius: 50px;
+    }
+</style>

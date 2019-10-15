@@ -6,13 +6,17 @@
         <table v-else>
             <thead>
             <tr>
+                <th>#</th>
                 <th>Employee name</th>
                 <th>Employee email</th>
                 <th>Actions</th>
             </tr>
             </thead>
             <tbody>
-            <tr v-for="employee in employees" :key="employee.id">
+            <tr v-for="(employee, count) in employees" :key="employee.id">
+                <td>
+                    {{ count + 1 }}
+                </td>
                 <td>
                     <input v-if="editing === employee.id" type="text" v-model="employee.name" />
                     <span v-else>{{ employee.name }}</span>
